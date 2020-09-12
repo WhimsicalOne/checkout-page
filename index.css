@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --main-font: 'Montserrat', sans-serif;
+    --orange: #F2994A;
+    --gray: #F2F2F2;
+    --heading-gray: #4E5150;
+    --sub-title-gray: #333333;
+    --form-title-gray: #4F4F4F;
+    --form-text-gray: #828282;
+    --form-border: 1px solid #828282;
+    --icon-bg: #E0E0E0;
+}
+body > * {
+    font-family: var(--main-font);
+}
+img {
+    height: auto;
+    width: 100%;
+}
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.col {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+h1 {
+    font-size: 24px;
+    line-height: 29px;
+    color: var(--heading-gray);
+    margin: 50px 0px;
+}
+.order {
+    padding: 25px 20px;
+    background: var(--gray);
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+}
+.order .order-items {
+    margin-bottom: 30px;
+}
+.order .order-items .order-item {
+    display: flex;
+    width: 100%;
+    margin-bottom: 10px;
+    align-items: center;
+}
+.order-item .item-image img {
+    border-radius: 15px;
+    width: 120px;
+    height: 125px;
+    object-fit: cover;
+    object-position: center;
+    margin-right: 30px;
+}
+.order-item .item-details h4 {
+    color: var(--heading-gray);
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom: 10px;
+}
+.order-item .item-details .price-tag {
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--orange);
+}
+.order-item .item-details .price-tag > .striked-out-price {
+    text-decoration: line-through;
+    font-size: 10px;
+    line-height: 12px;
+    display: inline-block;
+    margin-left: 10px;
+    color: var(--heading-gray);
+}
+.order-item .item-details .item-counter {
+    border: var(--form-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 12px;
+    padding: 15px 10px;
+    margin-top: 15px;
+}
+.order-item .item-details .item-counter .icon {
+    background: var(--icon-bg);
+    border-radius: 6px;
+    color: #828282;
+    padding: 5px 10px;
+}
+.shipping,
+.total {
+    border-top: 1px solid #BDBDBD;
+    padding: 10px 0px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--sub-title-gray);
+}
+.form-container {
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.form-container h4 {
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--sub-title-gray);
+    margin: 15px 0px;
+}
+.form-container p {
+    font-size: 10px;
+    line-height: 12px;
+    color: var(--form-title-gray);
+    margin-bottom: 5px;
+}
+.input-controller {
+    margin-bottom: 20px;
+}
+.input-controller .inner-input {
+    display: flex;
+    border: var(--form-border);
+    border-radius: 12px;
+    padding: 10px;
+}
+.input-controller.no-border .inner-input {
+    border: none;
+}
+.input-controller .inner-input .material-icons {
+    margin-right: 12px;
+    color: var(--form-text-gray);
+}
+.input-controller .inner-input input,
+.input-controller .inner-input select,
+.item-counter input {
+    border: none;
+    border-bottom: var(--form-border);
+    background: none;
+    color: var(--sub-title-gray);
+    font-size: 12px;
+    line-height: 15px;
+    transition: .3s all ease-in;
+}
+.item-counter input {
+    border: none;
+    width: 30px;
+    text-align: center;
+}
+.inner-input input:not([type="checkbox"]),
+.inner-input select {
+    width: 100%;
+}
+.inner-input select {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+}
+.input-controller .inner-input input:focus,
+.input-controller .inner-input select:focus,
+.item-counter input:focus {
+    outline: none;   
+}
+.input-controller .inner-input input:required,
+.input-controller .inner-input input:invalid,
+.input-controller .inner-input select:required,
+.input-controller .inner-input select:invalid {
+    box-shadow: none;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #FF6347;
+}
+.input-controller .inner-input input:valid,
+.input-controller .inner-input select:valid {
+    border-bottom: 1px solid #98FB98;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+.shipping-information .two-col {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.shipping-information .two-col > div {
+    flex: 0 0 47%;
+}
+.shipping-information .inner-input input[id="postalcode"] {
+    width: 100px
+}
+.input-controller .inner-input input[type="checkbox"] {
+    margin-right: 10px;
+}
+.input-controller .inner-input .confirm {
+    font-size: 10px;
+    line-height: 12px;
+    color: var(--form-title-gray);
+}
+.form-container input[type="submit"] {
+    background: #F2994A;
+    border-radius: 12px;
+    width: 166px;
+    height: 54px;
+    font-size: 16px;
+    line-height: 20px;
+    color: #fff;
+    border: none;
+    align-self: flex-end;
+}
+footer {
+    font-size: 14px;
+    line-height: 17px;
+    color: #A9A9A9;
+    text-align: center;
+    margin: 25px 0px;
+}
+.alert {
+    background: #98FB98;
+    height: 100vh;
+    box-shadow: 0px 0px 12px -10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.alert h1 {
+    font-size: 32px;
+    color: white;
+    text-align: center;
+    line-height: 150%;
+}
+.alert a {
+    border: 1px solid black;
+    background: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+    .col-small {
+        flex: 0 0 45%;
+        max-width: 45%;
+        order: 2;
+    }
+    .col-large {
+        flex: 0 0 55%;
+        max-width: 55%;
+        order: 1;
+    }
+}
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+    h1 {
+        font-size: 36px;
+        line-height: 44px;
+    }
+    .form-container h4 {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .form-container p {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .input-controller .inner-input input,
+    .input-controller .inner-input select,
+    .item-counter input {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .input-controller .inner-input .confirm {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .shipping,
+    .total {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .order-item .item-details h4,
+    .order-item .item-details .price-tag {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .order-item .item-details .price-tag > .striked-out-price {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .shipping-information .inner-input input[id="postalcode"] {
+        width: 100%;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+    .col-small {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+        order: 2;
+    }
+    .col-large {
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+        order: 1;
+    }
+}
